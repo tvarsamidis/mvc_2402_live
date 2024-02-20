@@ -5,6 +5,8 @@ import org.aspectj.weaver.patterns.PerObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -73,4 +75,27 @@ public class PersonMvcController {
         model.addAttribute("jerseys", jerseysMap);
         return "s06collections";
     }
+
+    @GetMapping("s09init")
+    public String s09choose(Model model) {
+        return "s09choose";
+    }
+
+    @PostMapping("s10chose")
+    public String s10showchoice(Model model){
+        return "s10showchoice";
+    }
+////////////////////////////////////////////////////////////////////////////////////
+    @GetMapping("s11init")
+    public String s11choose(Model model, @RequestParam(value="user", defaultValue = "somebody") String userName) {
+        model.addAttribute("userName", userName);
+        return "s11choose";
+    }
+
+    @PostMapping("s12chose")
+    public String s12showchoice(Model model){
+        return "s12showchoice";
+    }
+
+
 }
