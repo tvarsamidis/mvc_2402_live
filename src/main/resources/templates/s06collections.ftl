@@ -21,6 +21,28 @@ Here is a summary of the available jerseys:<br/>
 </#list>
 
 
+<p>Advanced operations!</p>
+
+<#assign nums = [1, -2, 3, 4, -5]>
+Positives:
+<#list nums?filter(n -> n > 0) as x>${x} </#list> <br/>
+Negatives:
+<#list nums?filter(n -> n < 0) as x>${x} </#list> <br/>
+<br/>
+
+Selected team members:<br/>
+<#list persons?sort_by("age")?reverse?filter(p -> p.age > 40) as member>
+    - ${member.name} is ${member.age} years old<br/>
+</#list>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+
 
 
 </body>
