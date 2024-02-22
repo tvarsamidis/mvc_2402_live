@@ -101,5 +101,11 @@ public class PersonMvcController {
         return "s12showchoice";
     }
 
+    @GetMapping("s13init")
+    public String s13choose(Model model, @RequestParam(value="user", defaultValue = "nobody") String userName){
+        model.addAttribute("userName", userName);
+        return "s13choose";
+    }
+
 
 }
