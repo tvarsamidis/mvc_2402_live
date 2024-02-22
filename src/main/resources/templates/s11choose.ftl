@@ -8,8 +8,9 @@
 
 Press the 'submit' button when you are ready. <br/><br/>
 
-<form action="s10chose" method="post">
-
+<form action="s12chose" method="post">
+    <input type="hidden" name="user_name_from_s11" value=${userName}>
+    <input type="text" name="choice" id="choice"><br/><br/>
     <input type="submit" value="submit">
 </form>
 

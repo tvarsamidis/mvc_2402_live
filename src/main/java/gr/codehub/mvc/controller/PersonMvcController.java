@@ -85,15 +85,19 @@ public class PersonMvcController {
     public String s10showchoice(Model model){
         return "s10showchoice";
     }
-////////////////////////////////////////////////////////////////////////////////////
+
     @GetMapping("s11init")
-    public String s11choose(Model model, @RequestParam(value="user", defaultValue = "somebody") String userName) {
+    public String s11choose(Model model, @RequestParam(value="user", defaultValue = "noone") String userName) {
         model.addAttribute("userName", userName);
         return "s11choose";
     }
 
     @PostMapping("s12chose")
-    public String s12showchoice(Model model){
+    public String s12showchoice(Model model,
+                                @RequestParam("choice") String choice,
+                                @RequestParam("user_name_from_s11") String userName3) {
+        model.addAttribute("choice2", choice);
+        model.addAttribute("un_from_s12", userName3);
         return "s12showchoice";
     }
 
